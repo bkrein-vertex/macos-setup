@@ -41,8 +41,9 @@ cask "sourcetree"
 
 # Kubernetes
 tap "derailed/k9s"
-tap "hashicorp/tap"
 tap "FairwindsOps/tap"
+tap "hashicorp/tap"
+tap "instrumenta/instrumenta"
 
 brew "fluxcd/tap/flux"
 brew "FairwindsOps/tap/pluto"
@@ -63,6 +64,7 @@ brew "kustomize"
 brew "kube-linter"
 brew "kubeaudit"
 brew "kubecfg"
+brew "kubeval"
 brew "krew"
 brew "kubectx"
 brew "minikube"
@@ -136,4 +138,4 @@ brew "mas"
 
 mas "EasyRes", id: 688211836
 mas "Hour - World Clock", id: 569089415
-
+mas "Microsoft Remote Desktop", id: 1295203466

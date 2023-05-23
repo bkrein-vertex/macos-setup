@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+BREWFILE_NAME="Current-Brewfile"
+
+cat <<EOF > "$BREWFILE_NAME"
+# Currently installed apps as of $(date)
+#
+# Custom taps
+tap "derailed/k9s"
+tap "FairwindsOps/tap"
+tap "hashicorp/tap"
+tap "instrumenta/instrumenta"
+EOF
+
+echo -e "\n# Brew Formulas" >> "$BREWFILE_NAME"
+brew list -1 --formula | sed 's/\(.*\)/brew "\1"/' >> "$BREWFILE_NAME"
+
+echo -e "\n# Brew Casks" >> "$BREWFILE_NAME"
+brew list -1 --cask | sed 's/\(.*\)/cask "\1"/' >> "$BREWFILE_NAME"
+
+echo -e "\n# App Store Apps" >> "$BREWFILE_NAME"
+mas list | sed 's/(.*//' | sed 's/\([0-9]*\) \(.*\)/mas "\2", id: \1/' | sed 's/"[ ]* /"/;s/[ ]*",/",/' >> "$BREWFILE_NAME"
+
