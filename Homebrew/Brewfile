@@ -1,3 +1,10 @@
+# This is a stripped down, general-purpose `Brewfile` that has a lot
+# of the things I normally use.  I've removed a lot of things that 
+# are less used or more niche to make this a more generalized starting
+# point.  
+#
+# Use at your own risk! :)
+
 # General Utility
 brew "asdf"
 brew "base64"
@@ -51,8 +58,6 @@ brew "FairwindsOps/tap/polaris"
 brew "derailed/k9s/k9s"
 
 brew "argocd"
-brew "flux"
-brew "fluxctl"
 brew "glooctl"
 brew "helm"
 brew "istioctl"
