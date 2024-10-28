@@ -18,7 +18,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PYENV_ROOT="$HOME/.pyenv"
 
 # If you come from bash you might have to change your $PATH.
-export PATH="$HOME/bin:${HOME}/.krew/bin:${PYENV_ROOT}/bin:/usr/local/bin:$PATH"
+export PATH="${PYENV_ROOT}/bin:/usr/local/bin:$PATH"
 export HISTFILE="$HOME/.zsh_history"
 
 # Don't use a pager for short output that doesn't need it
@@ -132,9 +132,10 @@ builtin which -s terraform &>/dev/null && plugins+=(terraform customtf)
 builtin which -s vagrant &>/dev/null && plugins+=(vagrant)
 builtin which -s gh &>/dev/null && plugins+=(gh)
 
-#eval "$(pyenv init --path)"
+# initialize pyenv for shell
 eval "$(pyenv init -)"
 
+# Check for any oh-my-zsh updates & prompt
 source $ZSH/oh-my-zsh.sh
 
 # Enable iTerm2 Shell Integrations
